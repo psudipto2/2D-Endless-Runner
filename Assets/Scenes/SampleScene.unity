@@ -205,6 +205,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &208591358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208591359}
+  - component: {fileID: 208591360}
+  m_Layer: 0
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &208591359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208591358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1662480316}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &208591360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208591358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b370edd0c158ce4591246ddc5ab2a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpGameobjects:
+  - {fileID: 7036703409171739553, guid: 0aaa3a6251aff334a8fdddccddd6461a, type: 3}
+  - {fileID: 6878517711888542815, guid: 95ee78ec2d84d29458b8258f7f2e33f1, type: 3}
+  - {fileID: 7756370125249775574, guid: 636ef2cbad763a243944c49b65396f6b, type: 3}
+  - {fileID: 3177600800936591497, guid: 05dc2af1a4dbd1547ac84dc629ef89b8, type: 3}
+  DownGameobjects:
+  - {fileID: 7525915522672217038, guid: 3753e040dfe84904eb70c215f9d4579a, type: 3}
+  - {fileID: 5621108876402926518, guid: f0766c908b5bdd24f9d0893adb81cf2a, type: 3}
+  - {fileID: 8782264491751839412, guid: fa12e7d56d966a4478159196f6bc0de0, type: 3}
+  - {fileID: 8228159628353272369, guid: 3e07948bed334fb44aff846105179c58, type: 3}
+  maxX: 8
+  maxY: 3.8
+  minX: -8
+  minY: -3.8
+  timeBetweenSpawn: 0.9
 --- !u!1 &286993085
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65163bc632d33ef4fad0e2d2b5532fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundSpeed: 0
+  BackgroundSpeed: 1
   BackgroundRenderer: {fileID: 286993088}
 --- !u!23 &286993088
 MeshRenderer:
@@ -495,6 +553,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 1128400840}
   - {fileID: 286993086}
+  - {fileID: 208591359}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
