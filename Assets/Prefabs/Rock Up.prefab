@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7036703409171739559}
   - component: {fileID: 7036703409171739558}
+  - component: {fileID: 7789019888365675587}
+  - component: {fileID: -7999466220284809830}
+  - component: {fileID: -444394002251796833}
   m_Layer: 0
   m_Name: Rock Up
   m_TagString: Untagged
@@ -26,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7036703409171739553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +85,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &7789019888365675587
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036703409171739553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.22841501, y: 0.14387333}
+  - {x: 0.30948913, y: 0.17485261}
+  - {x: 0.37642273, y: -0.51681304}
+  - {x: 0.45665962, y: -0.5875215}
+  - {x: 0.5467294, y: -1.187981}
+  - {x: -0.55202883, y: -1.1893036}
+  - {x: -0.24707685, y: -0.08674904}
+  - {x: -0.1580335, y: -0.02045679}
+  - {x: 0.07275419, y: 1.1902256}
+  - {x: 0.16402775, y: 1.1988953}
+  - {x: 0.245455, y: 0.16698092}
+  - {x: 0.26206273, y: 0.17003223}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!50 &-7999466220284809830
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036703409171739553}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-444394002251796833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036703409171739553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf0b632a91b0b34f8b28ff5d9a0239f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
