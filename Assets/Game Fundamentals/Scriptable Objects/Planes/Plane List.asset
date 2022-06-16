@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd7e432a47e4794c9117810155c10de, type: 3}
+  m_Name: Plane List
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 11400000, guid: 46b283a6bde0811458bf7e3d5632b2db, type: 2}
+  - {fileID: 11400000, guid: e1ef9c40c85957e41a84f89ece96a43c, type: 2}
+  - {fileID: 11400000, guid: f563cc5323179cb43b996369ac783937, type: 2}
+  - {fileID: 11400000, guid: 4d8128b8d26a71242a5fc211bc5c2484, type: 2}

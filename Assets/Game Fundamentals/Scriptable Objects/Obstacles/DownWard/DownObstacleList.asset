@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f070f2a5397da4a9233664794377dd, type: 3}
+  m_Name: DownObstacleList
+  m_EditorClassIdentifier: 
+  dObstacles:
+  - {fileID: 11400000, guid: 468299dd8be8f8644b5a3658b748f166, type: 2}
+  - {fileID: 11400000, guid: 5a0751644ea16e34881ed4f4e355c675, type: 2}
+  - {fileID: 11400000, guid: 9764f24b5c0a2af42b51ab2fb3ff55ae, type: 2}
+  - {fileID: 11400000, guid: 0a03d981afb04404983c824e2594eee7, type: 2}
+  - {fileID: 11400000, guid: 18b8ba5e584fc184682d42e59c82fbc9, type: 2}
+  - {fileID: 11400000, guid: 9833e3454ad5c3b4480bf9e011542cfa, type: 2}
+  - {fileID: 11400000, guid: cdd921b75f6b91943b7f4e0c271a0ace, type: 2}
+  - {fileID: 11400000, guid: 0cc965a258110684a9aea2d382006467, type: 2}
+  - {fileID: 11400000, guid: 619deec6cf258864ba04d6d35929cb48, type: 2}
+  - {fileID: 11400000, guid: 9cdfd38faf841174a869d640e9dcf385, type: 2}
+  - {fileID: 11400000, guid: f69672f4640eebb49a550d22fee21bff, type: 2}
+  - {fileID: 11400000, guid: d018e6406fc219e41b147c86b19de9bb, type: 2}
