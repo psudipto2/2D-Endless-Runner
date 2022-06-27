@@ -25,6 +25,10 @@ namespace PlayerMVC
         {
             currentPlayerController = playerController;
         }
+        public GameObject setPlayer()
+        {
+            return this.gameObject;
+        }
     }
 }
 

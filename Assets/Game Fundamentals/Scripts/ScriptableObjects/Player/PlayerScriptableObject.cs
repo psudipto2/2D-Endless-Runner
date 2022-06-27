@@ -4,7 +4,7 @@ using PlayerScriptable;
 
 namespace PlayerScriptable
 {
-    [CreateAssetMenu(fileName = "PlayerScriptableObject", menuName = "ScriptableObject/Player/NewPlayerScriptableObject")]
+    [CreateAssetMenu(fileName = "Player Scriptable Object", menuName = "Scriptable Object/Player/New Player Scriptable Object")]
     public class PlayerScriptableObject : ScriptableObject
     {
 

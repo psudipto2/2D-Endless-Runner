@@ -32,6 +32,9 @@ namespace PlayerMVC
             currentPlayerController = new PlayerController(playerModel,player);
             players.Add(currentPlayerController);
         }
-        
+        public GameObject SetPlayer()
+        {
+            return currentPlayerController.playerView.setPlayer();
+        }
     }
 }
