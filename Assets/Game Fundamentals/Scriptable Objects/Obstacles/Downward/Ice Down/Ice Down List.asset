@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b7cda8695a6524cb3574c10ad50d48, type: 3}
+  m_Name: Ice Down List
+  m_EditorClassIdentifier: 
+  Obstacles:
+  - {fileID: 11400000, guid: 7ea98c1a2e3118343ab1b92e1616c50f, type: 2}
+  - {fileID: 11400000, guid: 5c6893e2813e6094ea84885eb20b775d, type: 2}
+  - {fileID: 11400000, guid: 0566cb90ac47b9c4eae136ca08a62ba9, type: 2}
