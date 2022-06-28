@@ -2,47 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Singleton;
+using ObjectPool;
 
-
-public class ObjectPooler<T> : MonoSingletonGeneric<ObjectPooler<T>> where T : class
+namespace ObjectPool
 {
-    private List<ObjectToPool<T>> pooledItems;
-    public virtual T GetItem()
+    public class ObjectPooler<T> : MonoSingletonGeneric<ObjectPooler<T>> where T : class
     {
-        if (pooledItems.Count > 0)
+        private List<ObjectToPool<T>> pooledItems;
+        public virtual T GetItem()
         {
-            ObjectToPool<T> item = pooledItems.Find(i => i.IsUsed == false);
-            if (item != null)
+            if (pooledItems.Count > 0)
             {
-                item.IsUsed = true;
-                return item.Item;
+                ObjectToPool<T> item = pooledItems.Find(i => i.IsUsed == false);
+                if (item != null)
+                {
+                    item.IsUsed = true;
+                    return item.Item;
+                }
             }
+            return CreateNewPooledItem();
         }
-        return CreateNewPooledItem();
-    }
 
-    private T CreateNewPooledItem()
-    {
-        ObjectToPool<T> pooledItem = new ObjectToPool<T>();
-        pooledItem.Item = CreateItem();
-        pooledItem.IsUsed = true;
-        pooledItems.Add(pooledItem);
-        return pooledItem.Item;
-    }
+        private T CreateNewPooledItem()
+        {
+            ObjectToPool<T> pooledItem = new ObjectToPool<T>();
+            pooledItem.Item = CreateItem();
+            pooledItem.IsUsed = true;
+            pooledItems.Add(pooledItem);
+            return pooledItem.Item;
+        }
 
-    public virtual void ReturnItem(T item)
-    {
-        ObjectToPool<T> pooledItem = pooledItems.Find(i => i.Item.Equals(item));
-        pooledItem.IsUsed = false;
-    }
-    protected virtual T CreateItem()
-    {
-        return (T)null;
-    }
-    [System.Serializable]
-    private class ObjectToPool<T>
-    {
-        public T Item;
-        public bool IsUsed;
+        public virtual void ReturnItem(T item)
+        {
+            ObjectToPool<T> pooledItem = pooledItems.Find(i => i.Item.Equals(item));
+            pooledItem.IsUsed = false;
+        }
+        protected virtual T CreateItem()
+        {
+            return (T)null;
+        }
+        [System.Serializable]
+        private class ObjectToPool<T>
+        {
+            public T Item;
+            public bool IsUsed;
+        }
     }
 }

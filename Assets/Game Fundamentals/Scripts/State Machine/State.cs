@@ -5,6 +5,8 @@ using StateMachine;
 using Singleton;
 using ObstacleScriptable;
 using ObstacleMVC;
+using GroundScriptable;
+using GroundMVC;
 
 namespace StateMachine
 {
@@ -12,6 +14,8 @@ namespace StateMachine
     {
         [SerializeField] protected ObstacleScriptableObjectList[] obstacleScriptableObjectLists;
         [SerializeField] private State[] states;
+        [SerializeField] private GroundScriptableObjectList groundSOList;
+        [SerializeField] protected GroundScriptableObject ground;
         protected ObstacleScriptableObjectList ObstacleScriptableObjectList;
         protected ObstacleScriptableObject obstacle;
         protected State currentState;
@@ -19,12 +23,18 @@ namespace StateMachine
         protected float timeBetweenChangeState=10f;
         protected float timeBeweenSpawn = 0.9f;
         protected float changeStateTime;
-        protected float spawnTime;
+        protected float obstacleSpawnTime;
+        protected float groundSpawnTime;
+
         protected void Start()
         {
             int rand = Random.Range(0, 4);
             currentState = states[rand];
             currentState.OnStateEnter();
+            currentState.ground = groundSOList.groundList[rand];
+            //ground = groundSOList.groundList[rand];
+            //GroundService.Instance.ground = ground;
+            //GroundService.Instance.CreateNewGround();
         }
         public virtual void OnStateEnter()
         {
@@ -38,16 +48,26 @@ namespace StateMachine
         {
             ChangeState();
             SpawnObstacle();
+            SpawnGround();
         }
 
         private void SpawnObstacle()
         {
-            if (Time.time > spawnTime)
+            if (Time.time > obstacleSpawnTime)
             {
                 SetObstacle();
                 ObstacleService.Instance.CreateNewObstacle(obstacle);
-                spawnTime = Time.time + timeBeweenSpawn;
+                obstacleSpawnTime = Time.time + timeBeweenSpawn;
             }
+        }
+        private void SpawnGround()
+        {
+            if (Time.time > groundSpawnTime)
+            {
+                GroundService.Instance.CreateNewGround(currentState.ground);
+                groundSpawnTime = Time.time + 0.53f;
+            }
+            
         }
 
         private void ChangeState()
@@ -59,6 +79,7 @@ namespace StateMachine
                 if (currentState != activeState)
                 {
                     currentState.OnStateEnter();
+                    currentState.ground = groundSOList.groundList[rand];
                 }
                 changeStateTime = Time.time + timeBetweenChangeState;
             }
@@ -71,6 +92,5 @@ namespace StateMachine
             int chooseObs = Random.Range(0, 3);
             obstacle = ObstacleScriptableObjectList.Obstacles[chooseObs];
         }
-
     }
 }
