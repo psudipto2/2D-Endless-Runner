@@ -32,9 +32,6 @@ namespace StateMachine
             currentState = states[rand];
             currentState.OnStateEnter();
             currentState.ground = groundSOList.groundList[rand];
-            //ground = groundSOList.groundList[rand];
-            //GroundService.Instance.ground = ground;
-            //GroundService.Instance.CreateNewGround();
         }
         public virtual void OnStateEnter()
         {

@@ -9,20 +9,18 @@ namespace ObjectPool
     {
         private GroundModel groundModel;
         private GameObject destroyer;
-        private GameObject spawnner;
         private Transform spawnPoint;
         
-        public GroundController GetGround(GroundModel groundModel,GameObject destroyer,GameObject spawnner,Transform spawnPoint)
+        public GroundController GetGround(GroundModel groundModel,GameObject destroyer,Transform spawnPoint)
         {
             this.groundModel = groundModel;
             this.destroyer = destroyer;
-            this.spawnner = spawnner;
             this.spawnPoint = spawnPoint;
             return CreateItem();
         }
         protected override GroundController CreateItem()
         {
-            GroundController groundController = new GroundController(groundModel, destroyer, spawnner,spawnPoint);
+            GroundController groundController = new GroundController(groundModel, destroyer, spawnPoint);
             return groundController;
         }
     }

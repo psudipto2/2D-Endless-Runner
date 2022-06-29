@@ -13,7 +13,6 @@ namespace GroundMVC
         private GroundScriptableObject ground;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private GameObject destroyer;
-        [SerializeField] private GameObject spawnner;
         [SerializeField] private ObjectToPoolGround poolGround;
         private GroundController groundController;
         private List<GroundController> grounds = new List<GroundController>();
@@ -23,7 +22,7 @@ namespace GroundMVC
             this.ground = ground;
             GroundModel groundModel = new GroundModel(this.ground);
             spawnPoint.position = CreateNewSpawnPoint();
-            groundController = poolGround.GetGround(groundModel, destroyer, spawnner, spawnPoint);
+            groundController = poolGround.GetGround(groundModel, destroyer, spawnPoint);
             grounds.Add(groundController);
         }
         public void ReturnGround(GroundController groundController)

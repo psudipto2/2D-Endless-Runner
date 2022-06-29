@@ -9,23 +9,13 @@ namespace GroundMVC
     {
         public SpriteRenderer spriteRenderer;
         [HideInInspector] public GameObject destroyer;
-        [HideInInspector] public GameObject spawnner;
         private GroundController groundController;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject == destroyer)
             {
-                //GroundService.Instance.ReturnGround(groundController);
                 Destroy(this.gameObject);
-                groundController = null;
-            }
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.gameObject == spawnner)
-            {
-                //GroundService.Instance.CreateNewGround();
             }
         }
         public void SetController(GroundController groundController)
