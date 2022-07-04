@@ -14,6 +14,8 @@ namespace StarMVC
         {
             this.starModel = starModel;
             this.spawnPoint = spawnPoint;
+            this.starView = this.starModel.starView;
+            Debug.Log(this.starView);
             this.starView = GameObject.Instantiate<StarView>(this.starModel.starView, spawnPoint.position,spawnPoint.rotation);
             this.starView.spriteRenderer.sprite = this.starModel.image;
             this.starView.score = this.starModel.score;

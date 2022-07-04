@@ -16,6 +16,7 @@ namespace ObjectPool
             this.starModel = starModel;
             this.spawnPoint = spawnPoint;
             this.player = player;
+            Debug.Log(this.starModel.starView);
             return CreateItem();
         }
         protected override StarController CreateItem()

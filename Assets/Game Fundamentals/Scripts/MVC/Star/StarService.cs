@@ -20,10 +20,25 @@ namespace StarMVC
         private StarModel starModel;
         private StarController starController;
         private List<StarController> stars = new List<StarController>();
+        private float spawnWaveTime=10f;
+        private float timeBeetweenWave = 5f;
+        private void Update()
+        {
+            SpawnWave();
+        }
+        private void SpawnWave()
+        {
+            if (Time.time > spawnWaveTime)
+            {
+                CreateNewWave();
+                spawnWaveTime = Time.time + timeBeetweenWave;
+                Debug.Log("Star wave updated");
+            }
+        }
         public void CreateNewWave()
         {
-            int chooseStar = Random.Range(0, 3);
-            star = starList.Stars[chooseStar];
+            int chooseStar = 0;
+            star = starList.stars[chooseStar];
             int numberOfStars = Random.Range(4, 7);
             Player = PlayerService.Instance.SetPlayer();
             for(int i = 0; i < numberOfStars; i++)
@@ -35,8 +50,10 @@ namespace StarMVC
         public void CreateNewStar(StarScriptableObject star,Transform spawnPoint,GameObject player)
         {
             this.star = star;
+            Debug.Log(this.star);
             StarModel starModel = new StarModel(this.star);
             this.starModel = starModel;
+            Debug.Log(this.starModel.starView);
             starController = poolStar.GetStar(this.starModel, spawnPoint, player);
             stars.Add(starController);
         }

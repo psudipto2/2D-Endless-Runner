@@ -187,6 +187,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &108683713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108683715}
+  - component: {fileID: 108683714}
+  m_Layer: 0
+  m_Name: Object to pool Star
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &108683714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108683713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d2f6f1787fef46aaf0ddb9b7bec00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &108683715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108683713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &133557705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,49 +460,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286993085}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &418417076
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 418417078}
-  - component: {fileID: 418417077}
-  m_Layer: 0
-  m_Name: Star Wave Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &418417077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418417076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7999448d8008c7848b002c62069d53fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &418417078
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418417076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,6 @@ GameObject:
   - component: {fileID: 1336476338}
   - component: {fileID: 1336476339}
   - component: {fileID: 1336476341}
-  - component: {fileID: 1336476340}
   - component: {fileID: 1336476342}
   m_Layer: 0
   m_Name: Service Holder
@@ -1738,18 +1737,6 @@ MonoBehaviour:
   - {fileID: 962231186}
   groundSOList: {fileID: 11400000, guid: 3ea0cfef7ca1f3c4a8095021ab9d7569, type: 2}
   ground: {fileID: 0}
---- !u!114 &1336476340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336476333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4d2f6f1787fef46aaf0ddb9b7bec00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1336476341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,9 +1749,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3259e5c664dfa4542b5291b3902456e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starList: {fileID: 11400000, guid: 24fc85078640d2f4cbd89fd9fd00dea9, type: 2}
-  poolStar: {fileID: 1336476340}
+  starList: {fileID: 11400000, guid: ec6b15da5efc9c94ebc6d0396f7a13b5, type: 2}
+  poolStar: {fileID: 108683714}
   spawnPoint: {fileID: 58755515}
+  star: {fileID: 0}
 --- !u!114 &1336476342
 MonoBehaviour:
   m_ObjectHideFlags: 0

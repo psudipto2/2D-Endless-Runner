@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d146b688c4ead4390f4e9710d4d828, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c06ceb96ec71744eb7fbf4179fb8cf1, type: 3}
   m_Name: Bronze
   m_EditorClassIdentifier: 
-  score: 1
-  image: {fileID: 21300000, guid: b79b6167532eab441bfac7ee71f710ba, type: 3}
-  starView: {fileID: 4491717783448524829, guid: 7b99b9c8c0341e64aba85d7b3d177299, type: 3}
+  score: 0
+  image: {fileID: 0}
+  starView: {fileID: 0}

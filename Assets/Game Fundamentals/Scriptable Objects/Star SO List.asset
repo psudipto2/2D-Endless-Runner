@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f25c870e53a83094392fc5a4539c61c0, type: 3}
+  m_Script: {fileID: 11500000, guid: aac0e813063783b4c9112c02ee4f82ab, type: 3}
   m_Name: Star SO List
   m_EditorClassIdentifier: 
-  Stars:
-  - {fileID: 11400000, guid: f2a2e286cf04b6c44ad890a7d14bb980, type: 2}
-  - {fileID: 11400000, guid: a5be1d20c23086e46ad4dffd886fbd54, type: 2}
-  - {fileID: 11400000, guid: 03f95e503559cfe4f88e1b1239b2871d, type: 2}
+  stars:
+  - {fileID: 11400000, guid: f20d46539399bd74dae27388f0eb925c, type: 2}
+  - {fileID: 11400000, guid: 84203ae432266e64e95c0f331aef021d, type: 2}
+  - {fileID: 11400000, guid: 31e6e47c8a5a0be4baf1762844e1a78d, type: 2}
