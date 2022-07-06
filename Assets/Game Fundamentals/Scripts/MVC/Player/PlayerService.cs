@@ -23,6 +23,10 @@ namespace PlayerMVC
         }
         public void CreateNewPlane()
         {
+            if (Time.timeScale != 1)
+            {
+                Time.timeScale = 1;
+            }
             int level=LobbyController.Instance.setLevel();
             playerScriptable = playerList.players[level];
             PlayerModel playerModel= new PlayerModel(playerScriptable);
@@ -35,6 +39,11 @@ namespace PlayerMVC
         public GameObject SetPlayer()
         {
             return currentPlayerController.playerView.setPlayer();
+        }
+        public void DestroyPlayer()
+        {
+            currentPlayerController.playerView.DestroyPlayer();
+            
         }
     }
 }

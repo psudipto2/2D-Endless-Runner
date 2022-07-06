@@ -29,6 +29,11 @@ namespace PlayerMVC
         {
             return this.gameObject;
         }
+        public void DestroyPlayer()
+        {
+            this.gameObject.SetActive(false);
+            currentPlayerController = null;
+        }
     }
 }
 

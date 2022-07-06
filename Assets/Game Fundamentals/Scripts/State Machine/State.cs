@@ -15,7 +15,7 @@ namespace StateMachine
         [SerializeField] protected ObstacleScriptableObjectList[] obstacleScriptableObjectLists;
         [SerializeField] private State[] states;
         [SerializeField] private GroundScriptableObjectList groundSOList;
-        [SerializeField] protected GroundScriptableObject ground;
+        protected GroundScriptableObject ground;
         protected ObstacleScriptableObjectList ObstacleScriptableObjectList;
         protected ObstacleScriptableObject obstacle;
         protected State currentState;

@@ -10,7 +10,7 @@ namespace StarMVC
         private StarModel starModel;
         private Transform spawnPoint;
         private StarView starView;
-        public StarController(StarModel starModel,Transform spawnPoint,GameObject player)
+        public StarController(StarModel starModel,Transform spawnPoint,GameObject player,GameObject destroyer)
         {
             this.starModel = starModel;
             this.spawnPoint = spawnPoint;
@@ -19,6 +19,7 @@ namespace StarMVC
             this.starView.spriteRenderer.sprite = this.starModel.image;
             this.starView.score = this.starModel.score;
             this.starView.player = player;
+            this.starView.destroyer = destroyer;
             this.starView.setController(this);
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ObstacleMVC;
 using StateMachine;
+using PlayerMVC;
 using Common;
 
 namespace ObstacleMVC
@@ -36,7 +37,8 @@ namespace ObstacleMVC
             }
             else if (collision.gameObject == player)
             {
-                Destroy(player);
+                player.SetActive(false);
+                PlayerService.Instance.DestroyPlayer();
             }
             else if (collision.CompareTag("Obstacle"))
             {

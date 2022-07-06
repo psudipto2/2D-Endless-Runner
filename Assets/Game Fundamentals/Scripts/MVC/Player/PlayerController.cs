@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayerMVC;
+using Common;
 
 namespace PlayerMVC
 {
@@ -19,6 +20,7 @@ namespace PlayerMVC
             this.playerView.SetPlayerController(this);
             rigidbody = this.playerView.GetComponent<Rigidbody2D>();
             playerSpeed = playerModel.Speed;
+            GameService.Instance.getPlayer(this.playerView.gameObject);
         }
         public void GetInput()
         {

@@ -11,6 +11,7 @@ namespace StarMVC
         public SpriteRenderer spriteRenderer;
         [HideInInspector] public int score;
         [HideInInspector] public GameObject player;
+        [HideInInspector] public GameObject destroyer;
         private StarController starController;
 
         public void setController(StarController starController)
@@ -24,7 +25,7 @@ namespace StarMVC
                 Destroy(gameObject);
                 ScoreManager.Instance.increaseScore(score);
             }
-            else
+            else if(collision.CompareTag("Obstacle")|| collision.gameObject==destroyer)
             {
                 Destroy(gameObject);
             }

@@ -15,8 +15,9 @@ namespace StarMVC
         [SerializeField] private StarScriptableObjectList starList;
         [SerializeField] private ObjectToPoolStar poolStar;
         [SerializeField] private Transform spawnPoint;
+        [SerializeField] private GameObject destroyer;
         //private Transform starSpawnPoint;
-        [SerializeField] private StarScriptableObject star;
+        private StarScriptableObject star;
         private StarModel starModel;
         private StarController starController;
         private List<StarController> stars = new List<StarController>();
@@ -53,7 +54,7 @@ namespace StarMVC
             StarModel starModel = new StarModel(this.star);
             this.starModel = starModel;
             Debug.Log(this.starModel.starView);
-            starController = poolStar.GetStar(this.starModel, spawnPoint, player);
+            starController = poolStar.GetStar(this.starModel, spawnPoint, player,destroyer);
             stars.Add(starController);
         }
         public Vector3 CreateNewSpawnPoint(Transform lastPoint)
