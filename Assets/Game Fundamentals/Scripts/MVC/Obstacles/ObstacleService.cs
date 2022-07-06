@@ -6,6 +6,7 @@ using ObstacleMVC;
 using PlayerMVC;
 using ObstacleScriptable;
 using StateMachine;
+using ObjectPool;
 
 namespace ObstacleMVC
 {
@@ -15,9 +16,11 @@ namespace ObstacleMVC
         [HideInInspector] public ObstacleScriptableObject obstacle;
         private GameObject player;
         [SerializeField] private Transform SpawnPoint;
+        [SerializeField] private GameObject scoreCounter;
         private List<ObstacleController> obstacles = new List<ObstacleController>();
         private ObstacleModel currentModel;
         private ObstacleController obstacleController;
+        [SerializeField] private ObjectToPoolObstacle poolObstacle;
 
         public void CreateNewObstacle(ObstacleScriptableObject obstacle)
         {
@@ -25,8 +28,9 @@ namespace ObstacleMVC
             ObstacleModel obstacleModel = new ObstacleModel(this.obstacle);
             currentModel = obstacleModel;
             SpawnPoint.position = CreateNewSpawnPoint(currentModel);
+            //SpawnPoint.rotation = GetRotation(currentModel);
             player = PlayerService.Instance.SetPlayer();
-            obstacleController = new ObstacleController(currentModel, currentModel.ObstacleView,SpawnPoint,destroyer,player);
+            obstacleController = poolObstacle.GetObsatacle(obstacleModel, destroyer, player, SpawnPoint,scoreCounter);
             obstacles.Add(obstacleController);
         }
         public Vector3 CreateNewSpawnPoint(ObstacleModel obstacleModel)
@@ -45,6 +49,20 @@ namespace ObstacleMVC
                 return obstacleModel.maxY * -1;
             }
             return obstacleModel.maxY;
+        }
+        private Quaternion GetRotation(ObstacleModel obstacleModel)
+        {
+            Quaternion rotation = new Quaternion();
+            if (obstacleModel.obstacleDirection == ObstacleDirection.Downward)
+            {
+                rotation.x = 0f;
+                rotation.y = 180f;
+                rotation.z = 180f;
+                rotation.w = 0f;
+                Debug.Log(rotation);
+                return rotation;
+            }
+            return rotation;
         }
     }
 }

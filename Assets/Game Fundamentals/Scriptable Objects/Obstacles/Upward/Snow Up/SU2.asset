@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: SU2
   m_EditorClassIdentifier: 
   obstacleDirection: 1
-  ObstacleView: {fileID: -5330267441582129866, guid: 636ef2cbad763a243944c49b65396f6b, type: 3}
+  obstacleType: 4
+  ObstacleView: {fileID: 5584071781099117718, guid: 66daa57bb2e00f848bfc6cac444c5ace, type: 3}
   Scale: {x: 1.5, y: 1.5, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  score: 2
   maxY: 3.24
+  image: {fileID: 21300000, guid: 01f1a0fa134a0b4499364dc12cbdea45, type: 3}

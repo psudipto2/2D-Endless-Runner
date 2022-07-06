@@ -8,8 +8,12 @@ namespace ObstacleScriptable
     public class ObstacleScriptableObject : ScriptableObject
     {
         public ObstacleDirection obstacleDirection;
+        public ObstacleType obstacleType;
         public ObstacleView ObstacleView;
         public Vector3 Scale;
+        public Quaternion rotation;
+        public int score;
         public float maxY;
+        public Sprite image;
     }
 }

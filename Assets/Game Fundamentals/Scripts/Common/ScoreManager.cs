@@ -13,24 +13,14 @@ namespace Common
         [SerializeField] private TextMeshProUGUI ScoreText;
         private GameObject player;
         private int playerScore;
+        private float scoreForTime;
         private void Update()
         {
-            increaseScoreWithTime();
             displayScore();
         }
         private void displayScore()
         {
             ScoreText.text = playerScore.ToString();
-        }
-        private void increaseScoreWithTime()
-        {
-            player = PlayerService.Instance.SetPlayer();
-            if (player != null)
-            {
-                float scoreForTime = 0;
-                scoreForTime += 1 * Time.deltaTime;
-            }
-
         }
         public void increaseScore(int score)
         {

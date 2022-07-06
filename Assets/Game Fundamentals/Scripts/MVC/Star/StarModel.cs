@@ -13,9 +13,9 @@ namespace StarMVC
         public StarView starView { get; private set; }
         public StarModel(StarScriptableObject starScriptable)
         {
-            starScriptable.score = score;
-            starScriptable.image = image;
-            starScriptable.starView = starView;
+            this.score = starScriptable.score;
+            this.image = starScriptable.image;
+            this.starView = starScriptable.starView;
         }
     }
 }

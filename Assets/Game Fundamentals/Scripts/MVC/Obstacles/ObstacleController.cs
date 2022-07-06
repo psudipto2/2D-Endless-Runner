@@ -11,7 +11,7 @@ namespace ObstacleMVC
         private ObstacleView obstacleView;
         public Transform spawnPoint;
 
-        public ObstacleController(ObstacleModel obstacleModel,ObstacleView obstaclePrefab,Transform spawnPoint,GameObject destroyer,GameObject player)
+        public ObstacleController(ObstacleModel obstacleModel,ObstacleView obstaclePrefab,Transform spawnPoint,GameObject destroyer,GameObject player,GameObject scoreCounter)
         {
             this.obstacleModel = obstacleModel;
             this.spawnPoint = spawnPoint;
@@ -19,6 +19,10 @@ namespace ObstacleMVC
             obstacleView.scale = obstacleModel.Scale;
             obstacleView.destroyer = destroyer;
             obstacleView.player = player;
+            obstacleView.score = obstacleModel.score;
+            obstacleView.scoreCounter = scoreCounter;
+            obstacleView.obstacleImage.sprite = obstacleModel.image;
+            obstacleView.rotation = obstacleModel.rotation;
             obstacleView.SetController(this);
         }
     }

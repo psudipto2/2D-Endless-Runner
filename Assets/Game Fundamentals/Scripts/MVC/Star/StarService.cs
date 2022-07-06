@@ -32,12 +32,11 @@ namespace StarMVC
             {
                 CreateNewWave();
                 spawnWaveTime = Time.time + timeBeetweenWave;
-                Debug.Log("Star wave updated");
             }
         }
         public void CreateNewWave()
         {
-            int chooseStar = 0;
+            int chooseStar = Random.Range(0, 3);
             star = starList.stars[chooseStar];
             int numberOfStars = Random.Range(4, 7);
             Player = PlayerService.Instance.SetPlayer();
