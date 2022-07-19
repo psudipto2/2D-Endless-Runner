@@ -64,5 +64,9 @@ namespace ObstacleMVC
             }
             return rotation;
         }
+        public ObstacleModel GetObstacleModel()
+        {
+            return currentModel;
+        }
     }
 }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ObstacleMVC;
+using Common;
+using System;
+using AchivementMVC;
 
 namespace ObstacleMVC
 {
@@ -24,6 +27,18 @@ namespace ObstacleMVC
             obstacleView.obstacleImage.sprite = obstacleModel.image;
             obstacleView.rotation = obstacleModel.rotation;
             obstacleView.SetController(this);
+            SubscribeEvents();
+        }
+        private void SubscribeEvents()
+        {
+            EventService.Instance.passedObstacle += UpdateOnObstaclePassed;
+        }
+
+        private void UpdateOnObstaclePassed()
+        {
+            obstacleModel.obstaclePassed += 1;
+            PlayerPrefs.SetInt("obstaclePassed", obstacleModel.obstaclePassed);
+            AchivementService.Instance.GetAchivementController().CheckForObstaclePassedAchivement();
         }
     }
 }

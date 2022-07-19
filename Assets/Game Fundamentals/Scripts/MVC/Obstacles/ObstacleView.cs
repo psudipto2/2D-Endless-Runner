@@ -51,6 +51,7 @@ namespace ObstacleMVC
         {
             if (collision.gameObject == scoreCounter)
             {
+                EventService.Instance.InvokeOnPassingObstacle();
                 ScoreManager.Instance.increaseScore(score);
             }
         }

@@ -17,6 +17,8 @@ namespace ObstacleMVC
         public float maxY { get; set; }
         public Sprite image { get; set; }
 
+        public int obstaclePassed;
+
         public ObstacleModel(ObstacleScriptableObject obstacleScriptable)
         {
             this.obstacleDirection = obstacleScriptable.obstacleDirection;
@@ -27,6 +29,7 @@ namespace ObstacleMVC
             this.score = obstacleScriptable.score;
             this.maxY = obstacleScriptable.maxY;
             this.image = obstacleScriptable.image;
+            obstaclePassed = PlayerPrefs.GetInt("obstaclePassed");
         }
     }
 }

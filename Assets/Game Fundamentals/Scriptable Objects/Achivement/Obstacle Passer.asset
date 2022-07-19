@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c5a0ec1291d14a834c70fe1457ca5, type: 3}
+  m_Name: Obstacle Passer
+  m_EditorClassIdentifier: 
+  achivements:
+  - name: Obstacle Passer One
+    achivement: 1
+    info: 10 Obstacles Passed
+    requirement: 10
+  - name: Obstacle Passer Two
+    achivement: 2
+    info: 25 Obstacles Passed
+    requirement: 25
+  - name: Obstacle Passer Three
+    achivement: 3
+    info: 50 Obstacles Passed
+    requirement: 50

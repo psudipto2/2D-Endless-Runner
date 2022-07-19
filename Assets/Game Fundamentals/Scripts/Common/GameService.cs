@@ -4,6 +4,7 @@ using UnityEngine;
 using Singleton;
 using PlayerMVC;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Common
 {
@@ -11,7 +12,11 @@ namespace Common
     {
         [SerializeField] private GameObject gameOverCanvas;
         [SerializeField] private GameObject gamePauseCanvas;
+        [SerializeField] private GameObject achivementCanvas;
+        [SerializeField] private TextMeshProUGUI achivementName;
+        [SerializeField] private TextMeshProUGUI achivementInfo;
         private GameObject player;
+        private Coroutine achivement;
 
         private void Update()
         {
@@ -46,6 +51,22 @@ namespace Common
         public void getPlayer(GameObject player)
         {
             this.player = player;
+        }
+        public void ShowAchivementUnlocked(string name, string info)
+        {
+            achivementName.text = name;
+            achivementInfo.text = info;
+            achivementCanvas.SetActive(true);
+            Time.timeScale = 0;
+            achivement = StartCoroutine(StartWaiting());
+            StopAllCoroutines();
+            Time.timeScale = 1;
+            achivementCanvas.SetActive(false);
+        }
+
+        private IEnumerator StartWaiting()
+        {
+            yield return new WaitForSeconds(3f);
         }
     }
 }
