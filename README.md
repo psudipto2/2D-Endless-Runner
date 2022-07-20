@@ -20,8 +20,9 @@ A 2D unity project made with the concept of Tappy Plane
  - MVC
  - State Machine
  - Object Pooling
+ - Observer Pattern
 
 
 ## Demo
 
-https://youtu.be/Dg26k47WxJc
+https://youtu.be/k6tfWSev2kA
