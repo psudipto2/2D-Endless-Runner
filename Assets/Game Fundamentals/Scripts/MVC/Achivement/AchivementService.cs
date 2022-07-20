@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using AchivementSO;
 using UnityEngine;
 using Singleton;
-using AchivementMVC;
-using AchivementSO;
 
 namespace AchivementMVC
 {
@@ -13,6 +10,8 @@ namespace AchivementMVC
         private AchivementController achivementController;
         private void Start()
         {
+            PlayerPrefs.SetInt("currentObstaclePassedTier", 0);
+            PlayerPrefs.SetInt("currentObstaclePassedTier", 0);
             CreateAchivementMVC();
         }
         public void CreateAchivementMVC()

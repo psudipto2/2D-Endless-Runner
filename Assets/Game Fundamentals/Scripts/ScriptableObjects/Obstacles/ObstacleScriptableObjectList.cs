@@ -1,5 +1,4 @@
 using UnityEngine;
-using ObstacleScriptable;
 
 namespace ObstacleScriptable
 {

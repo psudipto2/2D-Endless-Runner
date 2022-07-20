@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using AchivementMVC;
-using ObstacleMVC;
 using Common;
 
 namespace AchivementMVC
@@ -15,16 +11,16 @@ namespace AchivementMVC
 
         public AchivementController(AchivementModel achivementModel)
         {
-            currentObstaclePassedTier = PlayerPrefs.GetInt("currentObstaclePassedTier", 0);
-            currentStarsCollectedTier = PlayerPrefs.GetInt("currentStarsCollectedTier", 0);
+            currentObstaclePassedTier = PlayerPrefs.GetInt("currentObstaclePassedTier");
+            currentStarsCollectedTier = PlayerPrefs.GetInt("currentStarsCollectedTier");
             this.achivementModel = achivementModel;
         }
         public void CheckForObstaclePassedAchivement()
         {
-            for(int i = 0; i < achivementModel.achivementObstacle.achivements.Length; i++)
+            for (int i = 0; i < achivementModel.achivementObstacle.achivements.Length; i++)
             {
                 if (i != currentObstaclePassedTier) continue;
-                if (ObstacleService.Instance.GetObstacleModel().obstaclePassed == achivementModel.achivementObstacle.achivements[i].requirement)
+                if (PlayerPrefs.GetInt("obstaclePassed") == achivementModel.achivementObstacle.achivements[i].requirement)
                 {
                     UnlockAchivement(achivementModel.achivementObstacle.achivements[i].name, achivementModel.achivementObstacle.achivements[i].info);
                     currentObstaclePassedTier = i + 1;
@@ -33,9 +29,24 @@ namespace AchivementMVC
                 break;
             }
         }
+
+        public void CheckForStarCollectedAchivement()
+        {
+            for(int i = 0; i < achivementModel.achivementStar.achivements.Length; i++)
+            {
+                if (i != currentStarsCollectedTier) continue;
+                if (PlayerPrefs.GetInt("starCollected") == achivementModel.achivementStar.achivements[i].requirement)
+                {
+                    UnlockAchivement(achivementModel.achivementStar.achivements[i].name, achivementModel.achivementStar.achivements[i].info);
+                    currentStarsCollectedTier += 1;
+                    PlayerPrefs.SetInt("currentStarsCollectedTier", currentStarsCollectedTier);
+                }
+                break;
+            }
+        }
+
         private void UnlockAchivement(string achivementName,string achivementInfo)
         {
-            Debug.Log(achivementInfo);
             GameService.Instance.ShowAchivementUnlocked(achivementName, achivementInfo);
         }
     }

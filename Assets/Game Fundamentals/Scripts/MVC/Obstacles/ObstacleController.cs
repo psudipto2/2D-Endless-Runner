@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using ObstacleMVC;
-using Common;
-using System;
 using AchivementMVC;
+using UnityEngine;
+using Common;
 
 namespace ObstacleMVC
 {
@@ -26,8 +22,8 @@ namespace ObstacleMVC
             obstacleView.scoreCounter = scoreCounter;
             obstacleView.obstacleImage.sprite = obstacleModel.image;
             obstacleView.rotation = obstacleModel.rotation;
-            obstacleView.SetController(this);
             SubscribeEvents();
+            obstacleView.SetController(this);
         }
         private void SubscribeEvents()
         {
@@ -39,6 +35,10 @@ namespace ObstacleMVC
             obstacleModel.obstaclePassed += 1;
             PlayerPrefs.SetInt("obstaclePassed", obstacleModel.obstaclePassed);
             AchivementService.Instance.GetAchivementController().CheckForObstaclePassedAchivement();
+        }
+        private void UnSubscribeEvents()
+        {
+            EventService.Instance.passedObstacle -= UpdateOnObstaclePassed;
         }
     }
 }

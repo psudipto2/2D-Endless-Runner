@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using AchivementMVC;
 using UnityEngine;
-using StarMVC;
+using Common;
 
 namespace StarMVC
 {
@@ -20,7 +19,19 @@ namespace StarMVC
             this.starView.score = this.starModel.score;
             this.starView.player = player;
             this.starView.destroyer = destroyer;
+            SubcribeEvents();
             this.starView.setController(this);
+        }
+        private void SubcribeEvents()
+        {
+            EventService.Instance.collectedStar += UpdateOnStarCollection;
+        }
+
+        private void UpdateOnStarCollection()
+        {
+            starModel.starCollected += 1;
+            PlayerPrefs.SetInt("starCollected", starModel.starCollected);
+            AchivementService.Instance.GetAchivementController().CheckForStarCollectedAchivement();
         }
     }
 }

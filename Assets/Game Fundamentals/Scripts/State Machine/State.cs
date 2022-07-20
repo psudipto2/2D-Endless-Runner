@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using StateMachine;
-using Singleton;
 using ObstacleScriptable;
-using ObstacleMVC;
 using GroundScriptable;
+using ObstacleMVC;
+using UnityEngine;
+using Singleton;
 using GroundMVC;
 
 namespace StateMachine
@@ -28,6 +25,8 @@ namespace StateMachine
 
         protected void Start()
         {
+            PlayerPrefs.SetInt("obstaclePassed", 0);
+            PlayerPrefs.SetInt("starCollected", 0);
             int rand = Random.Range(0, 4);
             currentState = states[rand];
             currentState.OnStateEnter();

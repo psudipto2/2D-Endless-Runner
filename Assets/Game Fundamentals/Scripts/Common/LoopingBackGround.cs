@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Common
@@ -8,6 +6,7 @@ namespace Common
     {
         public float BackgroundSpeed;
         public Renderer BackgroundRenderer;
+
         private void Update()
         {
             BackgroundRenderer.material.mainTextureOffset += new Vector2(BackgroundSpeed * Time.deltaTime, 0f);

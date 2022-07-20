@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using ObstacleMVC;
 using ObstacleScriptable;
+using UnityEngine;
 
 namespace ObstacleMVC
 {

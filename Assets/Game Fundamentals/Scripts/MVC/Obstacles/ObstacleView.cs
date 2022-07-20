@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using ObstacleMVC;
-using StateMachine;
 using PlayerMVC;
 using Common;
 
@@ -33,7 +29,6 @@ namespace ObstacleMVC
             if (collision.gameObject == destroyer)
             {
                 Destroy(this.gameObject);
-                //currentController = null;
             }
             else if (collision.gameObject == player)
             {
@@ -44,7 +39,6 @@ namespace ObstacleMVC
             {
                 Destroy(this.gameObject);
                 ObstacleService.Instance.CreateNewObstacle(ObstacleService.Instance.obstacle);
-                //currentController = null;
             }
         }
         private void OnTriggerExit2D(Collider2D collision)

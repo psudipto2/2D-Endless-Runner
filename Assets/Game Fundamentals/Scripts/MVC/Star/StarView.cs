@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using StarMVC;
 using Common;
 
 namespace StarMVC
@@ -23,6 +20,7 @@ namespace StarMVC
             if (collision.gameObject == player)
             {
                 Destroy(gameObject);
+                EventService.Instance.InvokeOnCollectingStar();
                 ScoreManager.Instance.increaseScore(score);
             }
             else if(collision.CompareTag("Obstacle")|| collision.gameObject==destroyer)

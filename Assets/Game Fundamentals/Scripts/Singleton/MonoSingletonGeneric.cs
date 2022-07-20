@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Singleton
 {
-    public class MonoSingletonGeneric<T> : MonoBehaviour where T : MonoSingletonGeneric<T>  //creating a generic Singleton
+    public class MonoSingletonGeneric<T> : MonoBehaviour where T : MonoSingletonGeneric<T>
     {
         private static T instance;
         public static T Instance

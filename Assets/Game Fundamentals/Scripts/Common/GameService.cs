@@ -1,9 +1,7 @@
+using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Singleton;
-using PlayerMVC;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 namespace Common
@@ -15,8 +13,9 @@ namespace Common
         [SerializeField] private GameObject achivementCanvas;
         [SerializeField] private TextMeshProUGUI achivementName;
         [SerializeField] private TextMeshProUGUI achivementInfo;
+
         private GameObject player;
-        private Coroutine achivement;
+        private GameObject activeCanvas;
 
         private void Update()
         {
@@ -28,12 +27,13 @@ namespace Common
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 gamePauseCanvas.SetActive(true);
+                activeCanvas = gamePauseCanvas;
                 Time.timeScale = 0;
             }
         }
         public void Resume()
         {
-            gamePauseCanvas.SetActive(false);
+            activeCanvas.SetActive(false);
             Time.timeScale = 1;
         }
         public void Restart()
@@ -58,10 +58,7 @@ namespace Common
             achivementInfo.text = info;
             achivementCanvas.SetActive(true);
             Time.timeScale = 0;
-            achivement = StartCoroutine(StartWaiting());
-            StopAllCoroutines();
-            Time.timeScale = 1;
-            achivementCanvas.SetActive(false);
+            activeCanvas = achivementCanvas;
         }
 
         private IEnumerator StartWaiting()

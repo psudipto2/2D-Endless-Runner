@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using Singleton;
 using UnityEngine.SceneManagement;
+using UnityEngine;
+using Singleton;
 
 namespace Common
 {
@@ -11,6 +8,7 @@ namespace Common
     {
         [SerializeField] private GameObject levelScreen;
         private int level;
+
         public void PlayButton()
         {
             levelScreen.SetActive(true);

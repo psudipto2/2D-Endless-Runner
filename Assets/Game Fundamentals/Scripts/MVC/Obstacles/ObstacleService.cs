@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Singleton;
-using ObstacleMVC;
-using PlayerMVC;
 using ObstacleScriptable;
-using StateMachine;
 using ObjectPool;
+using Singleton;
+using PlayerMVC;
 
 namespace ObstacleMVC
 {
     public class ObstacleService : MonoSingletonGeneric<ObstacleService>
     {
         [SerializeField] private GameObject destroyer;
-        [HideInInspector] public ObstacleScriptableObject obstacle;
-        private GameObject player;
         [SerializeField] private Transform SpawnPoint;
         [SerializeField] private GameObject scoreCounter;
+        [SerializeField] private ObjectToPoolObstacle poolObstacle;
+        [HideInInspector] public ObstacleScriptableObject obstacle;
+        private GameObject player;
         private List<ObstacleController> obstacles = new List<ObstacleController>();
         private ObstacleModel currentModel;
         private ObstacleController obstacleController;
-        [SerializeField] private ObjectToPoolObstacle poolObstacle;
 
         public void CreateNewObstacle(ObstacleScriptableObject obstacle)
         {
@@ -28,7 +26,6 @@ namespace ObstacleMVC
             ObstacleModel obstacleModel = new ObstacleModel(this.obstacle);
             currentModel = obstacleModel;
             SpawnPoint.position = CreateNewSpawnPoint(currentModel);
-            //SpawnPoint.rotation = GetRotation(currentModel);
             player = PlayerService.Instance.SetPlayer();
             obstacleController = poolObstacle.GetObsatacle(obstacleModel, destroyer, player, SpawnPoint,scoreCounter);
             obstacles.Add(obstacleController);

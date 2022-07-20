@@ -1,19 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using Singleton;
-using PlayerMVC;
+using TMPro;
 
 namespace Common
 {
     public class ScoreManager : MonoSingletonGeneric<ScoreManager>
     {
         [SerializeField] private TextMeshProUGUI ScoreText;
-        private GameObject player;
         private int playerScore;
-        private float scoreForTime;
+
         private void Update()
         {
             displayScore();

@@ -1,8 +1,5 @@
-using System.Collections;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using AchivementSO;
+using System;
 
 namespace AchivementSO
 {

@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using Singleton;
-using StarMVC;
 using StarScriptable;
+using UnityEngine;
 using ObjectPool;
+using Singleton;
 using PlayerMVC;
 
 namespace StarMVC
@@ -16,7 +14,6 @@ namespace StarMVC
         [SerializeField] private ObjectToPoolStar poolStar;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private GameObject destroyer;
-        //private Transform starSpawnPoint;
         private StarScriptableObject star;
         private StarModel starModel;
         private StarController starController;
@@ -50,10 +47,8 @@ namespace StarMVC
         public void CreateNewStar(StarScriptableObject star,Transform spawnPoint,GameObject player)
         {
             this.star = star;
-            Debug.Log(this.star);
             StarModel starModel = new StarModel(this.star);
             this.starModel = starModel;
-            Debug.Log(this.starModel.starView);
             starController = poolStar.GetStar(this.starModel, spawnPoint, player,destroyer);
             stars.Add(starController);
         }

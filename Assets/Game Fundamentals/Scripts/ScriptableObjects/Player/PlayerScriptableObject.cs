@@ -1,6 +1,4 @@
 using UnityEngine;
-using PlayerMVC;
-using PlayerScriptable;
 
 namespace PlayerScriptable
 {

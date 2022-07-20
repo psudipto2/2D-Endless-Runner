@@ -1,6 +1,5 @@
 using UnityEngine;
 using ObstacleMVC;
-using ObstacleScriptable;
 
 namespace ObstacleScriptable
 {
